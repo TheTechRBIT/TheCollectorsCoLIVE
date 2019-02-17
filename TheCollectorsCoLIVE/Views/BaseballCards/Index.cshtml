@@ -4,6 +4,15 @@
     ViewBag.Title = "Index";
 }
 
+
+<style>
+    .CardHover:hover {
+        background-image: url('');
+        width: 125px;
+        height: 175px;
+    }
+</style>
+
 <h2>
     <img src="https://cdn0.iconfinder.com/data/icons/customicondesign-office6-shadow/256/baseball.png" height="30" width="30" />
     Cards
@@ -26,7 +35,9 @@
 
 <table class="table">
     <tr>
-
+        <th>
+            @Html.DisplayNameFor(model => model.CardImage)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.CardYear)
         </th>
@@ -56,16 +67,16 @@
         <th>
             @Html.DisplayNameFor(model => model.CardComments)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CardImage)
-        </th>
+
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
     <tr>
-
+        <td>
+            <img class="CardHover" src="@Html.DisplayFor(modelItem => item.CardImage)" height="53" width="38" />
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.CardYear)
         </td>
@@ -95,17 +106,19 @@
         <td>
             @Html.DisplayFor(modelItem => item.CardComments)
         </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.CardImage)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.BaseballCardID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.BaseballCardID }) |
+            @Html.ActionLink("Add", "Add", new { id = item.BaseballCardID })<br />
+            @Html.ActionLink("Edit", "Edit", new { id = item.BaseballCardID })<br />
+            @Html.ActionLink("Details", "Details", new { id = item.BaseballCardID })<br />
             @Html.ActionLink("Delete", "Delete", new { id = item.BaseballCardID })
-            @Html.ActionLink("Add", "Add", new { id = item.BaseballCardID })
+
 
         </td>
     </tr>
     }
 
 </table>
+
+
+
