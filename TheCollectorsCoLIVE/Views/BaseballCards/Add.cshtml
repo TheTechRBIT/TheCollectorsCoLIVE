@@ -14,86 +14,88 @@
     <div class="col-md-6 col-lg-6 col-sm-12">
         <dl class="dl-horizontal">
 
-
-
             <dt>
-                @Html.DisplayNameFor(model => model.Player.PlayerName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Player.PlayerName)
-            </dd>
-
-            <p></p>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.CardYear)
+                Year
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.CardYear)
             </dd>
 
-            <p></p>
-
             <dt>
-                @Html.DisplayNameFor(model => model.ManufacturerInfo.ManufacturerName)
+                Manufacturer
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.ManufacturerInfo.ManufacturerName)
             </dd>
 
-            <p></p>
+            <dt>
+                Card Number
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardNumber)
+            </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Position.PositionName)
+                Player
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Player.PlayerName)
+            </dd>
+
+
+            <dt>
+                Position
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.Position.PositionName)
             </dd>
 
-            <p></p>
-
             <dt>
-                @Html.DisplayNameFor(model => model.Team.TeamName)
+                Team
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.Team.TeamName)
             </dd>
 
-            <p></p>
-
             <dt>
-                @Html.DisplayNameFor(model => model.PlayerNumber)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.PlayerNumber)
-            </dd>
-
-            <p></p>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Coach.CoachName)
+                Coach
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.Coach.CoachName)
             </dd>
 
-            <p></p>
 
             <dt>
-                @Html.DisplayNameFor(model => model.CardComments)
+                Player Number
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlayerNumber)
+            </dd>
+
+
+            <dt>
+                Additional Info
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.CardComments)
             </dd>
 
+            <dt>
+                Image URL
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardImage)
+            </dd>
 
         </dl>
     </div>
