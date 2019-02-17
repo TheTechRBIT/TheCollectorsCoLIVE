@@ -187,16 +187,58 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseballCardsController.cs" />
+    <Compile Include="Controllers\CoachesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManufacturerInfoesController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\PositionsController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902161541513_InitialCreate.cs" />
+    <Compile Include="Migrations\201902161541513_InitialCreate.Designer.cs">
+      <DependentUpon>201902161541513_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902161703148_addproperty.cs" />
+    <Compile Include="Migrations\201902161703148_addproperty.Designer.cs">
+      <DependentUpon>201902161703148_addproperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902162003366_TeamClassCRUD.cs" />
+    <Compile Include="Migrations\201902162003366_TeamClassCRUD.Designer.cs">
+      <DependentUpon>201902162003366_TeamClassCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902162014336_PositionClassCRUD.cs" />
+    <Compile Include="Migrations\201902162014336_PositionClassCRUD.Designer.cs">
+      <DependentUpon>201902162014336_PositionClassCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902162022593_ManufacturerClassCRUD.cs" />
+    <Compile Include="Migrations\201902162022593_ManufacturerClassCRUD.Designer.cs">
+      <DependentUpon>201902162022593_ManufacturerClassCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902162032329_CoachesClassCRUD.cs" />
+    <Compile Include="Migrations\201902162032329_CoachesClassCRUD.Designer.cs">
+      <DependentUpon>201902162032329_CoachesClassCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902162054293_BaseballCardCRUD.cs" />
+    <Compile Include="Migrations\201902162054293_BaseballCardCRUD.Designer.cs">
+      <DependentUpon>201902162054293_BaseballCardCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BaseballCard.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Coach.cs" />
+    <Compile Include="Models\ManufacturerInfo.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TheCollectorsCoContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -209,6 +251,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\TheCollectorsCo - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -254,6 +297,38 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Players\Create.cshtml" />
+    <Content Include="Views\Players\Delete.cshtml" />
+    <Content Include="Views\Players\Details.cshtml" />
+    <Content Include="Views\Players\Edit.cshtml" />
+    <Content Include="Views\Players\Index.cshtml" />
+    <Content Include="Views\Home\Contribute.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\Positions\Create.cshtml" />
+    <Content Include="Views\Positions\Delete.cshtml" />
+    <Content Include="Views\Positions\Details.cshtml" />
+    <Content Include="Views\Positions\Edit.cshtml" />
+    <Content Include="Views\Positions\Index.cshtml" />
+    <Content Include="Views\ManufacturerInfoes\Create.cshtml" />
+    <Content Include="Views\ManufacturerInfoes\Delete.cshtml" />
+    <Content Include="Views\ManufacturerInfoes\Details.cshtml" />
+    <Content Include="Views\ManufacturerInfoes\Edit.cshtml" />
+    <Content Include="Views\ManufacturerInfoes\Index.cshtml" />
+    <Content Include="Views\Coaches\Create.cshtml" />
+    <Content Include="Views\Coaches\Delete.cshtml" />
+    <Content Include="Views\Coaches\Details.cshtml" />
+    <Content Include="Views\Coaches\Edit.cshtml" />
+    <Content Include="Views\Coaches\Index.cshtml" />
+    <Content Include="Views\BaseballCards\Create.cshtml" />
+    <Content Include="Views\BaseballCards\Delete.cshtml" />
+    <Content Include="Views\BaseballCards\Details.cshtml" />
+    <Content Include="Views\BaseballCards\Edit.cshtml" />
+    <Content Include="Views\BaseballCards\Index.cshtml" />
+    <Content Include="Views\BaseballCards\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -270,6 +345,29 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201902161541513_InitialCreate.resx">
+      <DependentUpon>201902161541513_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902161703148_addproperty.resx">
+      <DependentUpon>201902161703148_addproperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902162003366_TeamClassCRUD.resx">
+      <DependentUpon>201902162003366_TeamClassCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902162014336_PositionClassCRUD.resx">
+      <DependentUpon>201902162014336_PositionClassCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902162022593_ManufacturerClassCRUD.resx">
+      <DependentUpon>201902162022593_ManufacturerClassCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902162032329_CoachesClassCRUD.resx">
+      <DependentUpon>201902162032329_CoachesClassCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902162054293_BaseballCardCRUD.resx">
+      <DependentUpon>201902162054293_BaseballCardCRUD.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

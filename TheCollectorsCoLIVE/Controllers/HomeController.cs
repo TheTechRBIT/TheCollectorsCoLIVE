@@ -26,5 +26,11 @@ namespace TheCollectorsCoLIVE.Controllers
 
             return View();
         }
+        public ActionResult Contribute()
+        {
+            ViewBag.Message = "Your contribution page.";
+
+            return View();
+        }
     }
 }

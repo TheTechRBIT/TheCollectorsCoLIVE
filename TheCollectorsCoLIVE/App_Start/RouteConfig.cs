@@ -13,6 +13,8 @@ namespace TheCollectorsCoLIVE
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes(); // Attribute Routing
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -1,0 +1,100 @@
+﻿@model TheCollectorsCoLIVE.Migrations.BaseballCard
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Card Details</h2>
+
+<div>
+    <h4>
+        <img src="https://cdn0.iconfinder.com/data/icons/customicondesign-office6-shadow/256/baseball.png" height="30" width="30" />
+    </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Coach.CoachName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coach.CoachName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufacturerInfo.ManufacturerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturerInfo.ManufacturerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Player.PlayerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Player.PlayerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position.PositionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position.PositionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Team.TeamName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Team.TeamName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardComments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardComments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BaseballCardID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
