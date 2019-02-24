@@ -13,13 +13,13 @@
     }
 
 
-    .CardHover:hover {
-        background-image: url('');
-        border-radius: 10px;
-        width: 125px;
-        height: 175px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+        .CardHover:hover {
+            background-image: url('');
+            border-radius: 10px;
+            width: 125px;
+            height: 175px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
 </style>
 
 <h2>
@@ -27,9 +27,7 @@
     Cards
 </h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<p><a class="btn btn-info" href="../../BaseballCards/Create">Create New &raquo;</a></p>
 
 
 @using (Html.BeginForm())
@@ -41,95 +39,95 @@
 }
 
 
-        <table class="table">
+<table class="table">
 
-            <tr>
-                <th>
+    <tr>
+        <th>
 
-                </th>
-                <th>
-                    Release Year
-                </th>
-                <th>
-                    Manufacturer
-                </th>
-                <th>
-                    Card #
-                </th>
-                <th>
-                    Player
-                </th>
-                <th>
-                    Position
-                </th>
-                <th>
-                    Team
-                </th>
-                <th>
-                    Coach
-                </th>
+        </th>
+        <th>
+            Release Year
+        </th>
+        <th>
+            Manufacturer
+        </th>
+        <th>
+            Card #
+        </th>
+        <th>
+            Player
+        </th>
+        <th>
+            Position
+        </th>
+        <th>
+            Team
+        </th>
+        <th>
+            Coach
+        </th>
 
-                <th>
-                    Player #
-                </th>
+        <th>
+            Player #
+        </th>
 
-                <th>
-                    Additional Info
-                </th>
+        <th>
+            Additional Info
+        </th>
 
-                <th></th>
-            </tr>
+        <th></th>
+    </tr>
 
-            @foreach (var item in Model)
-            {
+    @foreach (var item in Model)
+    {
 
-                <tr>
-                    <td>
-                        <img class="CardHover" src="@Html.DisplayFor(modelItem => item.CardImage)" height="53" width="38"/>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CardYear)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ManufacturerInfo.ManufacturerName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CardNumber)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Player.PlayerName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Position.PositionName)
-                    </td>
-                    <td>
-                        <img src="
-                        @Html.DisplayFor(modelItem => item.Team.TeamImageURL)" height="30" width="30"  title="@Html.DisplayFor(modelItem => item.Team.TeamName)" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Coach.CoachName)
-                    </td>
+        <tr>
+            <td>
+                <img class="CardHover" src="@Html.DisplayFor(modelItem => item.CardImage)" height="53" width="38" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturerInfo.ManufacturerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.PlayerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position.PositionName)
+            </td>
+            <td>
+                <img src="
+                        @Html.DisplayFor(modelItem => item.Team.TeamImageURL)" height="30" width="30" title="@Html.DisplayFor(modelItem => item.Team.TeamName)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coach.CoachName)
+            </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PlayerNumber)
-                    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerNumber)
+            </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CardComments)
-                    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardComments)
+            </td>
 
-                    <td>
-                        <center>
-                            @Html.ActionLink("Add", "Add", new { id = item.BaseballCardID }) | @Html.ActionLink("Edit", "Edit", new { id = item.BaseballCardID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.BaseballCardID })
-                        </center>
+            <td>
+                <center>
+                    @Html.ActionLink("Add", "Add", new { id = item.BaseballCardID }) | @Html.ActionLink("Edit", "Edit", new { id = item.BaseballCardID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BaseballCardID })
+                </center>
 
 
-                    </td>
-                </tr>
+            </td>
+        </tr>
 
-            }
+    }
 
-        </table>
+</table>
 
 
