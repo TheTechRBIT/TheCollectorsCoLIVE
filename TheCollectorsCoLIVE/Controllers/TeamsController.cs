@@ -15,6 +15,7 @@ namespace TheCollectorsCoLIVE.Controllers
         private TheCollectorsCoContext db = new TheCollectorsCoContext();
 
         // GET: Teams
+        [Authorize(Roles = "AdminUser")]
         [Route("Teams/Baseball/All")]
         public ActionResult Index(string sortOrder, string searchString)
         {
@@ -40,6 +41,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Teams/Details/5
+        [Authorize(Roles = "AdminUser")]
         [Route("Teams/Baseball/{id:int}")]
         public ActionResult Details(int? id)
         {
@@ -56,6 +58,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Teams/Create
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Create()
         {
             return View();
@@ -66,7 +69,7 @@ namespace TheCollectorsCoLIVE.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TeamID,TeamName")] Team team)
+        public ActionResult Create([Bind(Include = "TeamID,TeamName,TeamImageURL")] Team team)
         {
             if (ModelState.IsValid)
             {
@@ -79,6 +82,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Teams/Edit/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -94,11 +98,12 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // POST: Teams/Edit/5
+
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TeamID,TeamName")] Team team)
+        public ActionResult Edit([Bind(Include = "TeamID,TeamName,TeamImageURL")] Team team)
         {
             if (ModelState.IsValid)
             {
@@ -110,6 +115,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Teams/Delete/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

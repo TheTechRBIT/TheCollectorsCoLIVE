@@ -15,6 +15,7 @@ namespace TheCollectorsCoLIVE.Controllers
         private TheCollectorsCoContext db = new TheCollectorsCoContext();
 
         // GET: Coaches
+        [Authorize(Roles = "BasicUser, AdminUser")]
         [Route("Coaches/Baseball/All")]
         public ActionResult Index(string sortOrder, string searchString)
         {
@@ -40,6 +41,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Coaches/Details/5
+        [Authorize(Roles = "BasicUser, AdminUser")]
         [Route("Coaches/Baseball/{id:int}")]
         public ActionResult Details(int? id)
         {
@@ -56,6 +58,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Coaches/Create
+        [Authorize(Roles = "BasicUser, AdminUser")]
         public ActionResult Create()
         {
             return View();
@@ -79,6 +82,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Coaches/Edit/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -125,6 +129,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // POST: Coaches/Delete/5
+        [Authorize(Roles = "AdminUser")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -226,8 +226,16 @@
     <Compile Include="Migrations\201902162054293_BaseballCardCRUD.Designer.cs">
       <DependentUpon>201902162054293_BaseballCardCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\BaseballCard.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\201902241930442_whatt.cs" />
+    <Compile Include="Migrations\201902241930442_whatt.Designer.cs">
+      <DependentUpon>201902241930442_whatt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902241938376_InsertTeamImage.cs" />
+    <Compile Include="Migrations\201902241938376_InsertTeamImage.Designer.cs">
+      <DependentUpon>201902241938376_InsertTeamImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseballCard.cs" />
+    <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\ManufacturerInfo.cs" />
@@ -367,6 +375,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902162054293_BaseballCardCRUD.resx">
       <DependentUpon>201902162054293_BaseballCardCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902241930442_whatt.resx">
+      <DependentUpon>201902241930442_whatt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902241938376_InsertTeamImage.resx">
+      <DependentUpon>201902241938376_InsertTeamImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -18,7 +18,7 @@ namespace TheCollectorsCoLIVE.Controllers
 
 
         // GET: Players
-
+        [Authorize(Roles = "BasicUser, AdminUser")]
         [Route("Players/Baseball/All")]
         public ActionResult Index(string sortOrder, string searchString)
         {
@@ -53,6 +53,7 @@ namespace TheCollectorsCoLIVE.Controllers
 
 
         // GET: Players/Details/5
+        [Authorize(Roles = "BasicUser, AdminUser")]
         [Route("Players/Baseball/{id:int}")]
         public ActionResult Details(int? id)
         {
@@ -69,6 +70,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Players/Create
+        [Authorize(Roles = "BasicUser, AdminUser")]
         public ActionResult Create()
         {
             return View();
@@ -92,6 +94,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Players/Edit/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -123,6 +126,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: Players/Delete/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

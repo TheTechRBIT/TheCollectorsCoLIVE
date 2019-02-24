@@ -3,7 +3,14 @@
 @{
     ViewBag.Title = "Details";
 }
+<style>
+    .CardImage {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 15px;
+    }
 
+
+</style>
 <h2>Card Details</h2>
 
 <div>
@@ -100,7 +107,7 @@
         </dl>
     </div>
     <div class="col-md-6 col-lg-6 col-sm-12">
-        <img src="@Html.DisplayFor(model => model.CardImage)" height=" 315" width=" 225" />
+        <img class ="CardImage"src="@Html.DisplayFor(model => model.CardImage)" height=" 315" width=" 225" />
     </div>
 </div>
 

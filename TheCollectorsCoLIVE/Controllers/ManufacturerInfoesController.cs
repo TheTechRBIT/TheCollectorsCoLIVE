@@ -15,6 +15,7 @@ namespace TheCollectorsCoLIVE.Controllers
         private TheCollectorsCoContext db = new TheCollectorsCoContext();
 
         // GET: ManufacturerInfoes
+        [Authorize(Roles = "AdminUser")]
         [Route("Manu/Baseball/All")]
         public ActionResult Index()
         {
@@ -29,6 +30,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: ManufacturerInfoes/Details/5
+        [Authorize(Roles = "AdminUser")]
         [Route("Manu/Baseball/{id:int}")]
         public ActionResult Details(int? id)
         {
@@ -45,6 +47,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: ManufacturerInfoes/Create
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Create()
         {
             return View();
@@ -68,6 +71,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: ManufacturerInfoes/Edit/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,6 +103,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: ManufacturerInfoes/Delete/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

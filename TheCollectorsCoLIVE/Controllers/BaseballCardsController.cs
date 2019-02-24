@@ -45,7 +45,9 @@ namespace TheCollectorsCoLIVE.Controllers
             return View(baseballCard);
         }
 
+
         // GET: BaseballCards/Create
+        [Authorize(Roles = "BasicUser, AdminUser")]
         public ActionResult Create()
         {
             ViewBag.ManufacturerID = new SelectList(db.ManufacturerInfo, "ManufacturerID", "ManufacturerName");
@@ -79,6 +81,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: BaseballCards/Edit/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -120,6 +123,7 @@ namespace TheCollectorsCoLIVE.Controllers
         }
 
         // GET: BaseballCards/Delete/5
+        [Authorize(Roles = "AdminUser")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -156,6 +160,7 @@ namespace TheCollectorsCoLIVE.Controllers
 
 
         // ADD: BaseballCards/AddToCollection/5
+        [Authorize(Roles = "BasicUser, AdminUser")]
         [Route("Cards/Baseball/Add/{id:int}")]
         public ActionResult Add(int? id)
         {
